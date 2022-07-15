@@ -1,0 +1,63 @@
+﻿@model BlackRockEvents.Models.Reservation
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+    <h1 class="text-center">Delete Reservation</h1>
+    <hr>
+    <div class="text-right">
+        <a asp-action="PendingRequests" class="btn btn-primary">Back to List</a>
+    </div>
+    <h3 class="text-center">Are you sure you want to delete this?</h3>
+    <div class="text-center">
+        <dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.StartTime)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EndTime)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.EventType)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EventType)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NumOfAttendees)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NumOfAttendees)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.SeatsPerTable)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SeatsPerTable)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.IsApproved)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IsApproved)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Customer_id)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Customer_id)
+            </dd>
+        </dl> 
+        <form asp-action="ConfirmDelete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        </form>
+    </div>
+</div>

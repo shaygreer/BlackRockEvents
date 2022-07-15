@@ -1,0 +1,85 @@
+﻿@model IEnumerable<BlackRockEvents.Models.Professional>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+    <h1 class="text-center">Third Party Professionals</h1>
+    <p class="text-center">
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </p>
+    <table class="table table-bordered table-hover table-striped " id="adminProsTable">
+        <thead class="text-center thead-dark">
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>ProfessionName</th>
+                <th>PhotoName</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.css"/>
+@section Scripts{
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.js"></script>
+    <script>
+              $(document).ready(function (){
+                    $('#adminProsTable').DataTable({
+                        ajax:{
+                            url: '/AdminProfessionals/GetList',
+                            dataSrc: ''
+                        },
+                        columns:[
+                            {
+                                title: "First Name",
+                                data: "firstName"
+                            },
+                            {
+                                title: "Last Name",
+                                data: "lastName"
+                            },
+                            {
+                                title: "Profession",
+                                data: "profession" 
+                            },
+                            {
+                                title: "Image Name",
+                                data: "imageName" 
+                            },
+                              {
+                                title: "Email",
+                                data: "email" 
+                            },
+                              {
+                                title: "Phone Number",
+                                data: "phone" 
+                            },
+                            {
+                                title: "Edit  View  Delete",
+                                data: "proId",
+                                render : function(data){
+                                    let mystring='<a href="/AdminProfessionals/Edit?id=' +data+`"><i class="fa-regular fa-pen-to-square"></i></a>
+                                                 <a href="/AdminProfessionals/Details?id=` +data+`"><i class="fa-solid fa-magnifying-glass"></i></a>
+                                                 <a href="/AdminProfessionals/Delete?id=` +data+`"><i class="fa-solid fa-trash-can"></i></a>`;
+                                    return mystring;
+                                }
+                            }
+                        ]
+                    });
+                });
+    </script>
+    }

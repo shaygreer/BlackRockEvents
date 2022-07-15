@@ -1,0 +1,23 @@
+﻿@page
+@model BlackRockEvents.Areas.Identity.Pages.Account.RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Register Confirmation";
+}
+<div class="wrapper">
+    <h1 class="text-center">Register Confirmation</h1>
+    <hr />
+    @{
+        if (@Model.DisplayConfirmAccountLink)
+        {
+            <p class="text-center">
+                <a id="confirm-link" href="@Model.EmailConfirmationUrl">Click here to confirm your account</a>
+            </p>
+        }
+        else
+        {
+            <p>
+                Please check your email to confirm your account.
+            </p>
+        }
+    }
+</div>

@@ -1,0 +1,13 @@
+﻿@model BlackRockEvents.Models.Professional
+<div class="card">
+    <img class="card-img-top" src="@Model.PhotoName" alt="Card Image" />
+    <div class="card-body">
+        <h3>@Model.FirstName @Model.LastName</h3>
+        <h4>@Model.ProfessionName</h4>
+        <p class="card-text">
+            @Model.Phone
+            <br>
+            @Model.Email
+        </p>
+    </div>
+</div>

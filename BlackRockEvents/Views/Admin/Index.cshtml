@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Admin";
+}
+<div class="wrapper">
+    <h1 class="text-center">Admin</h1>
+    <hr />
+    <div class="text-center">
+        <a class="btn btn-primary" asp-action="PendingRequests">View Pending Requests</a>
+        <br />
+        <br />
+        @if(User.IsInRole("Superadmin"))
+        {
+            <a class="btn btn-primary" asp-controller="UserRoles" asp-action="Index">View User Roles</a>
+            <br />
+            <br />
+            <a class="btn btn-primary" asp-controller="AdminProfessionals" asp-action="Index">View Professionals</a>
+        }
+    </div>
+</div>

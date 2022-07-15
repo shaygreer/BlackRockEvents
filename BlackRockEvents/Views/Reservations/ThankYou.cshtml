@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Thank You!";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+    <h1 class="text-center">Thank you!</h1>
+    <p class="text-center"> Your reservation request has been sent. You will be notified via email upon approval or denial.</p>
+    <br />
+    <h1 class="text-center"> Reservation Terms And Conditions / Disclaimers </h1>
+    <p class="text-center"> 
+        If your event goes over its time allotment, a mess is left, or there is damage to Black Rock Events you are subject to fees and damage liability.
+        We ask that you stay in communication with our team and if you have any questions pertaining to the above disclaimer contact us for more informmation.
+        Your reservation is not connected to any third party professionals you may hire whether recommended by the site or not. We are not liable for the actions 
+        or lack thereof by any third party professional such as event planners, wedding officiants, photographers, videographers, choreographers, caterers, etc. 
+        Please print this for your records. 
+        </p>
+    <div class="text-center">
+        <a class="btn btn-primary" onclick="javascript:window.print()">Print Terms And Conditions</a>
+        <br />
+        <br />
+        <a class="btn btn-primary" asp-controller="Home" asp-action="Index">Home</a>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+﻿@model BlackRockEvents.Models.Reservation
+@{
+    ViewData["Title"] = "Request Reservation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+    <div class="text-right">
+        <a class="btn btn-primary" asp-action="Index">View Unavailable Dates</a>
+    </div>
+    <h1 class="text-center">Request A Reservation</h1>
+    <hr />
+    <div class="container align-content-center">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="StartTime" class="control-label"></label>
+                        <input asp-for="StartTime" class="form-control"/>
+                        <span asp-validation-for="StartTime" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EndTime" class="control-label"></label>
+                        <input asp-for="EndTime"class="form-control"/>
+                        <span asp-validation-for="EndTime" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EventType" class="control-label"></label>
+                        <select asp-for="EventType" class="form-control"
+                        asp-items="Html.GetEnumSelectList<EventType>()">
+                            <option>Select Event Type...</option>
+                        </select>
+                        <span asp-validation-for="EventType" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="NumOfAttendees" class="control-label"></label>
+                        <input asp-for="NumOfAttendees" class="form-control" />
+                        <span asp-validation-for="NumOfAttendees" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SeatsPerTable" class="control-label"></label>
+                        <input asp-for="SeatsPerTable" class="form-control" />
+                        <span asp-validation-for="SeatsPerTable" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="text-center"> 
+                            <input type="submit" value="Create Request" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

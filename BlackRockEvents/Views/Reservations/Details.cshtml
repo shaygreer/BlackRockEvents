@@ -1,0 +1,48 @@
+﻿@model BlackRockEvents.Models.Reservation
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+    <h1 class="text-center">Reservation</h1>    
+    <h4 class="text-center">Please Review Your Reservation Request Details</h4>
+    <hr />  
+    <div class="text-center">
+         <dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.StartTime)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EndTime)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.EventType)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EventType)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NumOfAttendees)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NumOfAttendees)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.SeatsPerTable)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SeatsPerTable)
+            </dd>
+        </dl>  
+            <div class="text-center">
+                <h2><a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Id">Edit</a></h2>
+                <h2><a class="btn btn-primary" asp-action="ThankYou">Continue</a>    </h2>
+            </div>
+    </div>
+</div>

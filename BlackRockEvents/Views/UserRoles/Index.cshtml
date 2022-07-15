@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+    <h1 class="text-center">User Roles</h1>
+    <hr />
+    <table id="userRolesTable" class="table table-bordered table-hover table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.css"/>
+@section Scripts{
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.js"></script>
+    <script>
+              $(document).ready(function (){
+                    $('#userRolesTable').DataTable({
+                        ajax:{
+                            url: '/UserRoles/GetList',
+                            dataSrc: ''
+                        },
+                        columns:[
+                            {
+                                title: "First Name",
+                                data: "firstName"
+                            },
+                            {
+                                title: "Last Name",
+                                data: "lastName"
+                            },
+                            {
+                                title: "Email",
+                                data: "email" 
+                            },
+                            {
+                                title: "Roles",
+                                data: "roles" 
+                            },
+                            {
+                                title: "Manage",
+                                data: "manage",
+                                render : function(data){
+                                    let mystring='<a href="/UserRoles/Manage?UserName=' +data+'">Manage</a>'
+                                    return mystring;
+                                }
+                            }
+                        ]
+                    });
+                });                      
+    </script>
+}

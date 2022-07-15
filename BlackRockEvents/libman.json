@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "datatables.net-bs5@1.11.5",
+      "destination": "wwwroot/MyDownloads/datatables.net-bs5/"
+    },
+    {
+      "library": "jquery@3.6.0",
+      "destination": "wwwroot/jquery/"
+    },
+    {
+      "library": "datatables.net-bs4@3.2.2",
+      "destination": "wwwroot/lib/datatables.net-bs4/"
+    },
+    {
+      "library": "moment.js@2.29.3",
+      "destination": "wwwroot/moment.js/"
+    },
+    {
+      "library": "bootstrap-icons@1.8.1",
+      "destination": "wwwroot/bootstrap-icons/"
+    }
+  ]
+}

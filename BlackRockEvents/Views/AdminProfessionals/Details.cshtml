@@ -1,0 +1,56 @@
+﻿@model BlackRockEvents.Models.Professional
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+        <h1 class="text-center">Professionals Details</h1>
+        <hr />
+        <div class="text-right">
+            <a asp-action="Index" class="btn btn-primary">Back to List</a>
+        </div>
+        <div class="text-center">
+            <dl>
+                <dt>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FirstName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.LastName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProfessionName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProfessionName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PhotoName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.PhotoName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Phone)
+                </dd>
+            </dl>
+        </div>
+        <div class="text-center">
+            <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.Professional_Id">Edit</a> 
+        </div>
+</div>
+

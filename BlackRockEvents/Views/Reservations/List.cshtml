@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+    <h1 class="text-center">Unavailable Dates</h1>
+    <hr />
+    <div class="container">
+        <table id="unavailableTable" class="table table-bordered table-hover table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">
+                        StartTime
+                    </th>
+                    <th scope="col">
+                        EndTime
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr />
+    <p class="text-center">
+       <input type="button" class="btn btn-primary" value="Request Reservation" onclick="location.href='@Url.Action("Create", "Reservations")'" />
+    </p>
+</div>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.css"/>
+@section Scripts{
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.js"></script>
+    <script>
+              $(document).ready(function (){
+                    $('#unavailableTable').DataTable({
+                        ajax:{
+                            url: '/Reservations/GetList',
+                            dataSrc: ''
+                        },
+                        columns:[
+                            {
+                                title: "Start Time",
+                                data: "startTime", 
+                            },
+                            {
+                                title: "End Time",
+                                data: "endTime",
+                            }
+                        ]
+                    });
+                });                  
+    </script>
+}

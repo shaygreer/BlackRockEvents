@@ -1,0 +1,78 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>aspnet-BlackRockEvents-B4EFC1A6-3862-40F2-A940-E8E28D3A187B</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ViewComponents\**" />
+    <Compile Remove="Views\Reservations\Components\**" />
+    <Compile Remove="wwwroot\css\Font\**" />
+    <Compile Remove="wwwroot\moment.js\**" />
+    <Compile Remove="wwwroot\MyDownloads\**" />
+    <Content Remove="ViewComponents\**" />
+    <Content Remove="Views\Reservations\Components\**" />
+    <Content Remove="wwwroot\css\Font\**" />
+    <Content Remove="wwwroot\moment.js\**" />
+    <Content Remove="wwwroot\MyDownloads\**" />
+    <EmbeddedResource Remove="ViewComponents\**" />
+    <EmbeddedResource Remove="Views\Reservations\Components\**" />
+    <EmbeddedResource Remove="wwwroot\css\Font\**" />
+    <EmbeddedResource Remove="wwwroot\moment.js\**" />
+    <EmbeddedResource Remove="wwwroot\MyDownloads\**" />
+    <None Remove="ViewComponents\**" />
+    <None Remove="Views\Reservations\Components\**" />
+    <None Remove="wwwroot\css\Font\**" />
+    <None Remove="wwwroot\moment.js\**" />
+    <None Remove="wwwroot\MyDownloads\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Identity\IdentityHostingStartup.cs" />
+    <Compile Remove="Controllers\ScaffoldedAdminController.cs" />
+    <Compile Remove="Data\ApplicationUserManager.cs" />
+    <Compile Remove="Data\RequestedReservationData.cs" />
+    <Compile Remove="Models\EventTypeExtension.cs" />
+    <Compile Remove="Models\ReserveDateModel.cs" />
+    <Compile Remove="ViewModel\UnavailableDate.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Areas\Identity\Pages\Account\_ViewImports.cshtml" />
+    <Content Remove="Views\Admin\AddRole.cshtml" />
+    <Content Remove="Views\Admin\AdminEdit.cshtml" />
+    <Content Remove="Views\Home\Privacy.cshtml" />
+    <Content Remove="Views\Reservations\allforms.cshtml" />
+    <Content Remove="Views\Reservations\Available.cshtml" />
+    <Content Remove="Views\Reservations\lastIndex.cshtml" />
+    <Content Remove="Views\Reservations\PersonalDetails.cshtml" />
+    <Content Remove="Views\Reservations\Reserve.cshtml" />
+    <Content Remove="Views\Reservations\Unavailable.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.3" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.16" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.16" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.16">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="5.0.16" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="System.Runtime" Version="4.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\Identity\Pages\Account\Manage\Index.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Register.cshtml" />
+  </ItemGroup>
+
+</Project>

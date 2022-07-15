@@ -1,0 +1,106 @@
+﻿@*@model IEnumerable<BlackRockEvents.Models.Reservation>*@
+
+@{
+    ViewData["Title"] = "PendingRequests";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+<h1 class="text-center">Pending Requests</h1>
+<hr />
+<table id="pendingRequestsTable" class="table table-bordered table-hover table-sm table-striped" >
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                Start Time
+            </th>
+            <th scope="col">
+                End Time
+            </th>
+            <th scope="col">
+                Event Type
+            </th>
+            <th scope="col">
+                Number of Attendees
+            </th>
+            <th scope="col">
+               Guests Per Table
+            </th>
+            <th scope="col">
+                Approve/Deny
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+            </td>
+
+            <td>
+            </td>
+
+            <td>
+            </td>
+
+            <td>
+            </td>
+
+            <td>
+            </td>
+
+            <td>
+               
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.5/b-2.2.2/datatables.min.css"/>
+
+@section Scripts{
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/b-2.2.2/datatables.min.js"></script>
+    <script type="text/javascript">
+              $(document).ready(function (){
+                    $('#pendingRequestsTable').DataTable({
+                        ajax:{
+                            url: '/Admin/GetList',
+                            dataSrc: ''
+                        },
+                        columns:[
+                            {
+                                title: "Start Time",
+                                data: "startTime"
+                            },
+                            {
+                                title: "End Time",
+                                data: "endTime"
+                            },
+                            {
+                                title: "Event Type",
+                                data: "typeEvent" 
+                            },
+                            {
+                                title: "Number Of Attendees",
+                                data: "attendees" 
+                            },
+                            {
+                                title: "Guests Per Table",
+                                data: "guestsPerTable" 
+                            },
+                            {
+                                title: "Approve/Deny",
+                                data: "approve",
+                                render: function (data){
+                                    /*return '<a class="btn btn-primary" asp-action="AdminApprove" asp-route-id="'+data+'">Approve</a>';*/
+                                    let mystring='<a href="/Admin/AdminApprove/' +data+'"><i class="fa-solid fa-check"></i></a>' +
+                                    '<a href="/Admin/Delete/' +data+ '"><i class="fa-solid fa-x"></i></i></a>';
+                                    return mystring;
+                                }
+                            }
+                        ]
+                    });
+                });
+                         
+    </script>
+}
+@*<a class="btn btn-default" asp-action="AdminApprove" asp-route-id="resId">Approve</a> <a class="btn btn-default" asp-action="Delete" asp-route-id="resId">Deny</a>*@

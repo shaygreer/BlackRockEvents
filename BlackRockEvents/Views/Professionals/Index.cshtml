@@ -1,0 +1,14 @@
+﻿@model BlackRockEvents.ViewModel.ProfessionalsListViewModel
+<div class="wrapper">
+    <h1 class="text-center">Third Party Professionals</h1>
+    <h3 class="text-center">
+        DISCLAIMER: <br />
+        Please keep in mind that each professional is an individual business and Black Rock Events is not liable for anything pertaining to their services. Thank you!
+    </h3>
+    <div id="proCards">
+        @foreach(var pro in Model.Professionals)
+        {
+            <partial name="_ProfessionalCard" model="pro"/>
+        }
+    </div>
+</div>
